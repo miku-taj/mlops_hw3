@@ -10,6 +10,27 @@ API предоставляет простой интерфейс для полу
 
 ---
 
+## Запуск через Poetry
+1. Установка и запуск Поетри
+```
+pip install poetry
+poetry install
+poetry env activate
+```
+2. Запуск сервера
+```
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+Сервис будет доступен по адресу: http://localhost:8000/docs
+
+## Запуск через Docker
+1. Собери образ:
+```
+docker build -t student-predictor .
+docker run -d -p 8008:8008 student-predictor
+```
+---
+
 ## ⚙️ Основной стек
 
 - **Python 3.12**
@@ -51,23 +72,3 @@ project-root/
   "lunch": "standard",
   "test_preparation_course": "completed"
 }
-
-**Запуск через Poetry**
-1. Установка и запуск Поетри
-```
-pip install poetry
-poetry install
-poetry env activate
-```
-2. Запуск сервера
-```
-uvicorn main:app --host 0.0.0.0 --port 8000
-```
-Сервис будет доступен по адресу: http://localhost:8000/docs
-
-**Запуск через Docker**
-1. Собери образ:
-```
-docker build -t student-predictor .
-docker run -d -p 8008:8008 student-predictor
-```
